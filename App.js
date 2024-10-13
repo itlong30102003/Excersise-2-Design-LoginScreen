@@ -5,12 +5,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from "./component/HomeScreen";
 import LoginScreen from "./component/LoginScreen";
 import MyStack from "./component/MyStack";
+import MyDrawer from "./routers/MyDrawer";
 
 const App =()=>{
   return(
     <NavigationContainer>
       <PaperProvider>
-          {/* <MyDrawer/> */}
+        {/* <MyDrawer/> */}
           <MyStack/>
         {/* <LoginScreen navigation={undefined}/> */}
         {/* <CreateNewAccount/> */}

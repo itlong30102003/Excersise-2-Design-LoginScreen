@@ -7,18 +7,18 @@ import { Text } from "react-native-paper";
 import { View } from "react-native";
 
 const Stack = createStackNavigator()
-// const renderHeader =()=>{
-//     return(
-//         <View style={{
-//             height:50,
-//             backgroundColor:'aqua',
-//             justifyContent:'center',
-//             alignItems:'center'
-//         }}>
-//             <Text>Hello</Text>
-//         </View>
-//     )
-// }
+const renderHeader =()=>{
+    return(
+        <View style={{
+            height:50,
+            backgroundColor:'aqua',
+            justifyContent:'center',
+            alignItems:'center'
+        }}>
+            <Text>Hello</Text>
+        </View>
+    )
+}
 const MyStack =() =>{
     return(
         <Stack.Navigator 
@@ -29,9 +29,9 @@ const MyStack =() =>{
             <Stack.Screen name = "CreateAcc" component={CreateNewAccount}/>
             <Stack.Screen name = "ForgotPass" component={ForgotPassword}/>
             <Stack.Screen name = "Home" component={HomeScreen}
-            // options={{
-            //     header:renderHeader
-            // }}
+            options={{
+                header:renderHeader
+            }}
             />
         </Stack.Navigator>
     )

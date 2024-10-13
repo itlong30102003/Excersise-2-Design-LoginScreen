@@ -3,13 +3,14 @@ import { Alert, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, 
 
 
 const ForgotPassword=(navigation) =>{
-    const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");
+    const [Email, setEmail] = useState("");
 
     const onPress =()=>{
-        if(userName=="itlong30102003@gmail.com"&& password=="123"){
-            navigation.navigate("Home")
-        }
+        Alert.alert(
+            "Password Reset",
+            "An email has been sent to reset your password.",
+            [{ text: "OK" }]  // Nút xác nhận
+        );
     }   
     return(
         <View style={myStyle.container}>
@@ -19,32 +20,23 @@ const ForgotPassword=(navigation) =>{
                 <View style={myStyle.formLogin}>
                     
                     <View style={{alignItems:'center'}}> 
-                        <Text style={{...myStyle.title, fontSize:45}}>Forgot Password Screen </Text>
+                        <Text style={{...myStyle.title, fontSize:45}}>Reset your password </Text>
                     </View>
                 
-                    {/* <Text style={myStyle.title}> User Name </Text>
                     <TextInput
                         style={myStyle.input}
-                        placeholder="User Name"
+                        placeholder="Enter Email"
                         placeholderTextColor="#aaa"
                         keyboardType="default"
-                        value={userName}
-                        onChangeText={setUserName}
+                        value={Email}
+                        onChangeText={setEmail}
                     />
-                    <Text style={myStyle.title}> Password </Text>
-                    <TextInput
-                        style={myStyle.input}
-                        placeholder="Password"
-                        placeholderTextColor="#aaa"
-                        secureTextEntry
-                        value={password}
-                        onChangeText={setPassword}
-                    />  
+                    
                     <View style={{alignItems:'center'}}>
                         <TouchableOpacity style={myStyle.button} onPress={onPress}>
-                            <Text style={myStyle.buttonText}>Login</Text>
+                            <Text style={myStyle.buttonText}>Send Reset Email</Text>
                         </TouchableOpacity>
-                    </View> */}
+                    </View>
 
                 </View>
             </ImageBackground>
@@ -77,6 +69,7 @@ const myStyle = StyleSheet.create(
         title: {
             color: 'white',
             fontSize: 30,
+            alignItems:'center'
             },
         input: {
             width: '100%',

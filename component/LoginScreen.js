@@ -24,7 +24,7 @@ const LoginScreen=({navigation}) =>{
                 
                 <View style={myStyle.formLogin}>
                     <View style={{alignItems:'center'}}> 
-                        <Text style={{...myStyle.title, fontSize:45}}> Create New Account </Text>
+                        <Text style={{...myStyle.title, fontSize:45}}>Wellcome Back</Text>
                     </View>
                 
                     <Text style={myStyle.title}> User Name </Text>

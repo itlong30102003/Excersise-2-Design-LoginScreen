@@ -5,11 +5,18 @@ import { Alert, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, 
 const CreateNewAccount=({navigation}) =>{
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
+    const [ReEnterPassword, setReEnterPassword] = useState("");
 
     const onPress =()=>{
         // Alert.alert('Login Info', `User Name: ${userName}\nPassword: ${password}`)
-        if(userName=="itlong30102003@gmail.com"&& password=="123")
-            navigation.navigate("Home")
+        if(password==ReEnterPassword || userName == "" || password =="" )
+            navigation.navigate("Login")
+        else
+            Alert.alert(
+                "Password Mismatch",
+                "The passwords you entered do not match. Please try again.",
+                [{ text: "OK" }]
+            );
         
     }   
     return(
@@ -18,12 +25,11 @@ const CreateNewAccount=({navigation}) =>{
             <ImageBackground source={require('../image/BGLogin.png')} resizeMode="cover" style={myStyle.image}>
                 
                 <View style={myStyle.formLogin}>
-                    
                     <View style={{alignItems:'center'}}> 
-                        <Text style={{...myStyle.title, fontSize:45}}> Create New Account </Text>
+                        <Text style={{...myStyle.title,alignItems:'center' ,fontSize:45}}>Create a new account</Text>
                     </View>
                 
-                    {/* <Text style={myStyle.title}> User Name </Text>
+                    <Text style={myStyle.title}>User Name </Text>
                     <TextInput
                         style={myStyle.input}
                         placeholder="User Name"
@@ -32,7 +38,7 @@ const CreateNewAccount=({navigation}) =>{
                         value={userName}
                         onChangeText={setUserName}
                     />
-                    <Text style={myStyle.title}> Password </Text>
+                    <Text style={myStyle.title}>Password </Text>
                     <TextInput
                         style={myStyle.input}
                         placeholder="Password"
@@ -41,11 +47,20 @@ const CreateNewAccount=({navigation}) =>{
                         value={password}
                         onChangeText={setPassword}
                     />  
+                    <Text style={myStyle.title}>Re-enter the Password </Text>
+                    <TextInput
+                        style={myStyle.input}
+                        placeholder="Password"
+                        placeholderTextColor="#aaa"
+                        secureTextEntry
+                        value={ReEnterPassword}
+                        onChangeText={setReEnterPassword}
+                    />  
                     <View style={{alignItems:'center'}}>
                         <TouchableOpacity style={myStyle.button} onPress={onPress}>
-                            <Text style={myStyle.buttonText}>Login</Text>
+                            <Text style={myStyle.buttonText}>SignUp</Text>
                         </TouchableOpacity>
-                    </View> */}
+                    </View>
 
                 </View>
             </ImageBackground>
